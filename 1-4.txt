@@ -1,0 +1,59 @@
+             ###################################################
+
+              Some Useful Commands For Cypersecurity Engineer 
+
+             ##################################################
+
+1) apt-get upgrade >> Upgrade the repositry List 
+
+2) apt-get update >> Update all the sowtwares themselves
+
+3) man + command name >> Show commands info 
+
+4) ls >> Very famous command to list the directory contents
+
+5) switch / argument >> this defination for the extension we write behined the command to do extra job more the command do like ls -l tha lists the contents with extra data not just the names you can discover the command arguents in man page for the command 
+
+6) if you rember only the firt chars in the command name you can press tab and it will show all commands that start with these chars
+
+7) clear >> clear the terminal ( ctrl + l)
+
+8) apt-cache search >> you can useit search in the repositry cache 
+
+9) apt-get install >> used to install repositry packeges 
+
+10) apt-get autoremove >> used to remove any packege and asochited packages 
+
+11) locate Example.txt >> search in the system files 
+
+12) find location -name "Example.txt" >> search in a specific location int the system you can use "/" the root folder to search in all the system files 
+
+13) curl >> transfer a url by defult it uses -GET request "Very important"
+
+14) wget >> like curl but download the index.html file on the machine 
+
+15) touch >> creat file 
+
+16) ifconfig >> network interfaces info 
+
+17) grep >> filters data 
+
+18) ";" >> used to excute more than one command in the same line 
+
+19) "&" >> excute the command in the background 
+
+20) ps >> show running processes  -aux in details 
+
+21) df >> hard storage data 
+
+22) top >> Show active processes and its usage in queue from the most to the least 
+
+
+
+
+
+
+
+
+ 
+

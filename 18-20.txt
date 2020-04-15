@@ -1,0 +1,117 @@
+What is DNS (Domail Name Service) ?
+
+It is a way to convert the domain name to the website IP address 
+
+the connection with DNS server is UDP 
+
+when we write a domain name in the browser it first look up at the hosts cache on the pc 
+
+if it is not exist on it, it while look up on the ISP DNS server then top level domail DNS server then the root server until it find it and cache it 
+
+
+Known attacks :
+
+1) DNS poisoining 
+
+the attacker put the DNS his server so he can spoof the websites IPs to a fake ones he made so 
+
+all the data you entered comes to him .
+
+we can use dnschef tool in attacks like this but you need to have access to the victim Pc 
+
+to change the DNS domain or you can use social Engineering like today an app to speed the Inertnet connection and put your server IP 
+
+2) What is a DNS amplification attack?
+
+you can spoof the website server ip and go to the open DNS sever and request all the DNS cache 
+
+all this replay that will came to the server it will down the server 
+
+"spoof requests at open DNS resolver and it will reply to the real server with large response "
+
+3) DNS Cache snooping :
+
+It manges you to see all the DNS zones contents doen't explain it see it after 
+
+
+What is subdomain takeover?
+
+
+Subdomain takeover is a process of registering a non-existing domain name to gain control over another domain
+
+What is DNS records :
+
+DNS records act as instructions for the DNS server, so it knows which domain names each IP address is associated with.
+
+Different record types :
+
+1) "A" This record refers to the actual IP address that’s associated with the domain.
+
+you can use dig tool to find the record types and subdomains 
+
+2) "AAAA" the same of "A" but it indecates to a server with v6 IP 
+
+3) "MX" This refers to any mail servers that might be used in accordance with your domain.
+
+4) "CNAME" This record is used to indicate subdomains that might be listed under or associated with your current domain. 
+
+5) "PTR" This record if you want to connect different hosts with same IP address
+
+6) "SOA" This record has crucial information about your domain, like when your domain was last updated and relevant contact information.   
+
+Tools :
+
+Dig : uses to search all DNS records and DNS zone transfer
+
+HostileSubBruteforcer : subdomanis takeover 
+
+What is DNS zone transfer :
+
+DNS zone transfers using the AXFR protocol are the simplest mechanism to replicate DNS records across DNS servers.
+To avoid the need to edit information on multiple DNS servers, you can edit information on one server and use AXFR to copy information to other servers
+
+How to initiate DNS zone transfer :
+
+It is very simple we will use dig commands , for example the domain is zontransfer.me 
+
+First, we need to get the list of DNS servers for the domain :
+
+$ dig +short ns xonetransfer.me
+nsztm1.digi.ninja.
+nsztm2.digi.ninja.
+
+then, we can get initiate an "AXFR" request (the protcol is used in zone transfer) to get a copy of the zone from the primary server :
+note : we do the changes on the primary servers and do these commands from the secondry to transfer the new data 
+
+$ dig axfr zonetransfer.me @nsztm1.digi.ninja.
+; <<>> DiG 9.8.3-P1 <<>> axfr zonetransfer.me @nsztm1.digi.ninja. 
+;; global options: +cmd zonetransfer.me. 7200 IN SOA nsztm1.digi.ninja. robin.digi.ninja. 2017042001 172800 900 1209600 3600 
+(...)
+
+AXFR Vulnerability and Prevention
+
+AXFR offeres no authentication, so any client can ask a DNS server for a copy of the entire zone.
+this means that unless some kind of protection is introduced, an attacker can get a list of all hosts for a domain, which give tham a lot of potential attack vectors.
+
+In order to prevent this vulnerability from occurring, the DNS server should be configured to only allow zone transfers from trusted IP addresses. 
+The following is an example of how this can be accomplished in the BIND DNS server.
+
+# /etc/named.conf 
+acl trusted-nameservers {
+  192.168.0.10; //ns2 
+  192.168.1.20; //ns3 
+}; 
+zone zonetransfer.me { 
+  type master; 
+  file "zones/zonetransfer.me"; 
+  allow-transfer { trusted-nameservers; };
+};
+
+Additionally, it’s also recommended to use transaction signatures (TSIG) for zone transfers to prevent IP spoofing attempts.
+
+
+
+
+
+
+

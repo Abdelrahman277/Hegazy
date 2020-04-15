@@ -1,0 +1,45 @@
+
+* what happens when I connect the the laptop to ethernet cable and write https://www.google.com :
+
+now we are in the pysical layer when we dealing with bits in the cable the secound layer when the switche start to recognize my laptop Mac address 
+
+which is fixed the the third layer then we take an IP address from the DHCP server or manually 
+
+the fourth layer it decide if the connection will be TCP or UDP 
+
+in the fifth layer we choose the session protocols 
+
+and in the oresentation layer the data from all encrypt and decrypt protocols 
+
+then the high level layaer application procolos which dealing with http, ftp, smtp, ..... etc protocols 
+
+
+The difference between TCP and UDP ?
+
+
+TCP :
+
+uses thre way handcheck the browser send SYN and the server send ACK and the browser send ACKBACK 
+
+it uses when sending important data and don't want to loss any packets like Emails, important files , ....Etc
+
+Slower than UDP 
+
+important note :
+
+Tcp protocole rearrange the packets and combine them again 
+
+UDP :
+
+Don't uses any way of acknowledment 
+
+it is used to transer un important data or data you won't care if some packets losses in the way 
+
+Faster than TCP 
+
+like : VOIP and Video Streaming.
+
+Wireshark :
+
+A software used to trace all the traffics on the network 
+

@@ -1,0 +1,22 @@
+What is DNS:
+https://www.cloudflare.com/learning/dns/what-is-dns/
+
+what is subdomain takeover ?
+https://0xpatrik.com/subdomain-takeover-basics/
+https://0xpatrik.com/takeover-proofs/
+https://3alam.pro/1337r00t/articles/subdomain-takeover
+
+DNS record types:
+https://simpledns.plus/help/dns-record-types
+https://ns1.com/resources/dns-types-records-servers-and-queries
+ 
+Dig commands 
+
+https://www.hostinger.com/tutorials/how-to-use-the-dig-command-in-linux/
+https://www.acunetix.com/blog/articles/dns-zone-transfers-axfr/
+
+DNS cache snooping 
+https://support.simpledns.plus/kb/a125/what-is-dns-cache-snooping-and-how-do-i-prevent-it.aspx
+
+DNS Cache poisoining 
+https://www.howtogeek.com/161808/htg-explains-what-is-dns-cache-poisoning/

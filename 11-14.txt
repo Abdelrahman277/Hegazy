@@ -1,0 +1,22 @@
+                   ############################################
+                        HASHING - ENCODING - ENCRPTION
+                   ############################################
+
+1) Hashing : Is a function that uses mathemetical functions to change the original data to a fixed size text 
+
+types : MD5, SH1, SH2, ....ex
+
+We can use it to make sure the dat sent with now change on it by comparing the data hash bafore and after sending it they must be the same if there is any change then someone added or changed the data 
+
+2) Hashing : not foe security but for computer and servers to make data reasonable for them 
+
+Examples : URL, HTML, BASE60 HASHING 
+
+3) Encryption :
+
+* Symmetric : the two user uses the same encryption key the disadvatagea is that anyone can stell the key when you transfer it and decrypt all the data 
+
+EX: AES (THE OLDEST), DES, 3DES, TWO fISH, Blowfish 
+
+* ASymmetric : Uses public key for encryption and private key for decryption every user have both the first one send the public key the other encrypt the symmetric key with public key the other user decrypt it with private key and complete the conversation symmetric because it is faster 
+
